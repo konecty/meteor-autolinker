@@ -8,12 +8,11 @@ Package.describe({
     git: "https://github.com/copleykj/meteor-autolinker.git"
 });
 
-Package.on_use(function(api) {
-    if(api.versionsFrom){
-        api.versionsFrom('METEOR@0.9.1');
-    }
-    api.add_files('autolinker.js');
-    api.add_files('helpers.js', "client");
+Package.onUse(function(api) {
+    api.versionsFrom('METEOR@0.9.1');
+
+    api.addFiles('autolinker.js');
+    api.addFiles('helpers.js', "client");
 
     api.export("Autolinker");
 });
