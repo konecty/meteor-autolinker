@@ -1,9 +1,9 @@
 Package.describe({
-    summary: "Autolinker.js packaged for Meteor with some slight additions and modifications",
+    summary: "Autolinker.js packaged for Meteor with some slight additions and modifications. Forked from copleykj:meteor-autolinker",
 
     version: "1.0.0",
 
-    git: "https://github.com/copleykj/meteor-autolinker.git"
+    git: "https://github.com/Konecty/meteor-autolinker.git"
 });
 
 Package.onUse(function(api) {
