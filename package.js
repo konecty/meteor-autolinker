@@ -1,5 +1,5 @@
 Package.describe({
-    summary: "Autolinker.js packaged for Meteor with some slight additions and modifications. Forked from copleykj:meteor-autolinker",
+    summary: "Autolinker.js packaged for Meteor. Forked from copleykj:meteor-autolinker.",
 
     version: "1.0.0",
 
