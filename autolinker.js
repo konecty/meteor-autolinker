@@ -31,7 +31,7 @@
 	 * @constructor
 	 * @param {Object} [config] The configuration options for the Autolinker instance, specified in an Object (map).
 	 */
-    Autolinker = function( cfg ) {
+	Autolinker = function( cfg ) {
 		cfg = cfg || {};
 
 		// Assign the properties of `cfg` onto the Autolinker instance
@@ -43,12 +43,12 @@
 	Autolinker.prototype = {
 		constructor : Autolinker,  // fix constructor property
 
-        /**
-         * @cfg {Boolean} outputMarkdown
-         *
-         * `true` if the should be output as markdown instead of html
-         */
-        outputMarkdown : false,
+		/**
+		 * @cfg {Boolean} outputMarkdown
+		 *
+		 * `true` if the should be output as markdown instead of html
+		 */
+		outputMarkdown : false,
 		/**
 		 * @cfg {Boolean} newWindow
 		 *
@@ -137,16 +137,18 @@
 		matcherRegex : (function() {
 			var twitterRegex = /(^|[^\w])@(\w{1,15})/,              // For matching a twitter handle. Ex: @gregory_jacobs
 
-			    emailRegex = /(?:[\-;:&=\+\$,\w\.]+@)/,             // something@ for email addresses (a.k.a. local-part)
+				emailRegex = /(?:[\-;:&=\+\$,\w\.]+@)/,             // something@ for email addresses (a.k.a. local-part)
 
-			    protocolRegex = /(?:[A-Za-z]{3,9}:(?:\/\/)?)/,      // match protocol, allow in format http:// or mailto:
-			    wwwRegex = /(?:www\.)/,                             // starting with 'www.'
-			    domainNameRegex = /[A-Za-z0-9\.\-]*[A-Za-z0-9\-]/,  // anything looking at all like a domain, non-unicode domains, not ending in a period
-			    tldRegex = /\.(?:international|construction|contractors|enterprises|photography|productions|foundation|immobilien|industries|management|properties|technology|christmas|community|directory|education|equipment|institute|marketing|solutions|vacations|bargains|boutique|builders|catering|cleaning|clothing|computer|democrat|diamonds|graphics|holdings|lighting|partners|plumbing|supplies|training|ventures|academy|careers|company|cruises|domains|exposed|flights|florist|gallery|guitars|holiday|kitchen|neustar|okinawa|recipes|rentals|reviews|shiksha|singles|support|systems|agency|berlin|camera|center|coffee|condos|dating|estate|events|expert|futbol|kaufen|luxury|maison|monash|museum|nagoya|photos|repair|report|social|supply|tattoo|tienda|travel|viajes|villas|vision|voting|voyage|actor|build|cards|cheap|codes|dance|email|glass|house|mango|ninja|parts|photo|shoes|solar|today|tokyo|tools|watch|works|aero|arpa|asia|best|bike|blue|buzz|camp|club|cool|coop|farm|fish|gift|guru|info|jobs|kiwi|kred|land|limo|link|menu|mobi|moda|name|pics|pink|post|qpon|rich|ruhr|sexy|tips|vote|voto|wang|wien|wiki|zone|bar|bid|biz|cab|cat|ceo|com|edu|gov|int|kim|mil|net|onl|org|pro|pub|red|tel|uno|wed|xxx|xyz|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cw|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|za|zm|zw)\b/,   // match our known top level domains (TLDs)
+				phoneRegex = /\b(?:(?:\(?[0-9]{2}\)?[\- ])?[0-9]{4}[\- ]?[0-9]{4,5})\b|\b(?:(?:\(?[0-9]{2}\)?[\- ])?[0-9]{4,5}[\- ]?[0-9]{4})\b/,
 
-			    // Allow optional path, query string, and hash anchor, not ending in the following characters: "!:,.;"
-			    // http://blog.codinghorror.com/the-problem-with-urls/
-			    urlSuffixRegex = /(?:[\-A-Za-z0-9+&@#\/%?=~_()|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_()|])?/;  // note: optional part of the full regex
+				protocolRegex = /(?:[A-Za-z]{3,9}:(?:\/\/)?)/,      // match protocol, allow in format http:// or mailto:
+				wwwRegex = /(?:www\.)/,                             // starting with 'www.'
+				domainNameRegex = /[A-Za-z0-9\.\-]*[A-Za-z0-9\-]/,  // anything looking at all like a domain, non-unicode domains, not ending in a period
+				tldRegex = /\.(?:international|construction|contractors|enterprises|photography|productions|foundation|immobilien|industries|management|properties|technology|christmas|community|directory|education|equipment|institute|marketing|solutions|vacations|bargains|boutique|builders|catering|cleaning|clothing|computer|democrat|diamonds|graphics|holdings|lighting|partners|plumbing|supplies|training|ventures|academy|careers|company|cruises|domains|exposed|flights|florist|gallery|guitars|holiday|kitchen|neustar|okinawa|recipes|rentals|reviews|shiksha|singles|support|systems|agency|berlin|camera|center|coffee|condos|dating|estate|events|expert|futbol|kaufen|luxury|maison|monash|museum|nagoya|photos|repair|report|social|supply|tattoo|tienda|travel|viajes|villas|vision|voting|voyage|actor|build|cards|cheap|codes|dance|email|glass|house|mango|ninja|parts|photo|shoes|solar|today|tokyo|tools|watch|works|aero|arpa|asia|best|bike|blue|buzz|camp|club|cool|coop|farm|fish|gift|guru|info|jobs|kiwi|kred|land|limo|link|menu|mobi|moda|name|pics|pink|post|qpon|rich|ruhr|sexy|tips|vote|voto|wang|wien|wiki|zone|bar|bid|biz|cab|cat|ceo|com|edu|gov|int|kim|mil|net|onl|org|pro|pub|red|tel|uno|wed|xxx|xyz|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cw|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|za|zm|zw)\b/,   // match our known top level domains (TLDs)
+
+				// Allow optional path, query string, and hash anchor, not ending in the following characters: "!:,.;"
+				// http://blog.codinghorror.com/the-problem-with-urls/
+				urlSuffixRegex = /(?:[\-A-Za-z0-9+&@#\/%?=~_()|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_()|])?/;  // note: optional part of the full regex
 
 			return new RegExp( [
 				'(',  // *** Capturing group $1, which can be used to check for a twitter handle match. Use group $3 for the actual twitter handle though. $2 may be used to reconstruct the original string in a replace()
@@ -190,7 +192,11 @@
 					')',
 
 					urlSuffixRegex.source,  // match for path, query string, and/or hash anchor
-				')'
+				')',
+
+				'|',
+
+				'(', phoneRegex.source, ')'
 			].join( "" ), 'gi' );
 		} )(),
 
@@ -220,8 +226,8 @@
 		 */
 		htmlRegex : (function() {
 			var tagNameRegex = /[0-9a-zA-Z:]+/,
-			    attrNameRegex = /[^\s\0"'>\/=\x01-\x1F\x7F]+/,   // the unicode range accounts for excluding control chars, and the delete char
-			    attrValueRegex = /(?:".*?"|'.*?'|[^'"=<>`\s]+)/; // double quoted, single quoted, or unquoted attribute values
+				attrNameRegex = /[^\s\0"'>\/=\x01-\x1F\x7F]+/,   // the unicode range accounts for excluding control chars, and the delete char
+				attrValueRegex = /(?:".*?"|'.*?'|[^'"=<>`\s]+)/; // double quoted, single quoted, or unquoted attribute values
 
 			return new RegExp( [
 				'<(/)?',  // Beginning of a tag. Either '<' for a start tag, or '</' for an end tag. The slash or an empty string is Capturing Group 1.
@@ -281,16 +287,16 @@
 			// Loop over the HTML string, ignoring HTML tags, and processing the text that lies between them,
 			// wrapping the URLs in anchor tags
 			var htmlRegex = this.htmlRegex,
-			    currentResult,
-			    inBetweenTagsText,
-			    lastIndex = 0,
-			    anchorTagStackCount = 0,
-			    resultHtml = [];
+				currentResult,
+				inBetweenTagsText,
+				lastIndex = 0,
+				anchorTagStackCount = 0,
+				resultHtml = [];
 
 			while( ( currentResult = htmlRegex.exec( html ) ) !== null ) {
 				var tagText = currentResult[ 0 ],
-				    tagName = currentResult[ 2 ],
-				    isClosingTag = !!currentResult[ 1 ];
+					tagName = currentResult[ 2 ],
+					isClosingTag = !!currentResult[ 1 ];
 
 				inBetweenTagsText = html.substring( lastIndex, currentResult.index );
 				lastIndex = currentResult.index + tagText.length;
@@ -340,21 +346,22 @@
 		 */
 		processTextNode : function( text ) {
 			var me = this,  // for closures
-			    matcherRegex = this.matcherRegex,
-			    enableTwitter = this.twitter,
-			    enableEmailAddresses = this.email,
-			    enableUrls = this.urls;
+				matcherRegex = this.matcherRegex,
+				enableTwitter = this.twitter,
+				enableEmailAddresses = this.email,
+				enableUrls = this.urls;
 
-			return text.replace( matcherRegex, function( matchStr, $1, $2, $3, $4, $5, $6, $7 ) {
+			return text.replace( matcherRegex, function( matchStr, $1, $2, $3, $4, $5, $6, $7, $8 ) {
 				var twitterMatch = $1,
-				    twitterHandlePrefixWhitespaceChar = $2,  // The whitespace char before the @ sign in a Twitter handle match. This is needed because of no lookbehinds in JS regexes
-				    twitterHandle = $3,   // The actual twitterUser (i.e the word after the @ sign in a Twitter handle match)
-				    emailAddress = $4,    // For both determining if it is an email address, and stores the actual email address
-				    urlMatch = $5,        // The matched URL string
-				    protocolRelativeMatch = $6 || $7,  // The '//' for a protocol-relative match, with the character that comes before the '//'
+					twitterHandlePrefixWhitespaceChar = $2,  // The whitespace char before the @ sign in a Twitter handle match. This is needed because of no lookbehinds in JS regexes
+					twitterHandle = $3,   // The actual twitterUser (i.e the word after the @ sign in a Twitter handle match)
+					emailAddress = $4,    // For both determining if it is an email address, and stores the actual email address
+					urlMatch = $5,        // The matched URL string
+					protocolRelativeMatch = $6 || $7,  // The '//' for a protocol-relative match, with the character that comes before the '//'
+					phoneMatch = $8,
 
-				    prefixStr = "",       // A string to use to prefix the anchor tag that is created. This is needed for the Twitter handle match
-				    suffixStr = "";       // A string to suffix the anchor tag that is created. This is used if there is a trailing parenthesis that should not be auto-linked.
+					prefixStr = "",       // A string to use to prefix the anchor tag that is created. This is needed for the Twitter handle match
+					suffixStr = "";       // A string to suffix the anchor tag that is created. This is used if there is a trailing parenthesis that should not be auto-linked.
 
 				// Early exits with no replacements for:
 				// 1) Disabled link types
@@ -363,10 +370,10 @@
 				// 3) A protocol-relative url match (a URL beginning with '//') whose previous character is a word character
 				//    (effectively skipping over strings like "abc//google.com")
 				if(
-				    ( twitterMatch && !enableTwitter ) || ( emailAddress && !enableEmailAddresses ) || ( urlMatch && !enableUrls ) ||
-				    ( urlMatch && urlMatch.indexOf( '.' ) === -1 ) ||  // At least one period ('.') must exist in the URL match for us to consider it an actual URL
-				    ( urlMatch && /^[A-Za-z]{3,9}:/.test( urlMatch ) && !/:.*?[A-Za-z]/.test( urlMatch ) ) ||  // At least one letter character must exist in the domain name after a protocol match. Ex: skip over something like "git:1.0"
-				    ( protocolRelativeMatch && /^[\w]\/\//.test( protocolRelativeMatch ) )  // a protocol-relative match which has a word character in front of it (so we can skip something like "abc//google.com")
+					( twitterMatch && !enableTwitter ) || ( emailAddress && !enableEmailAddresses ) || ( urlMatch && !enableUrls ) ||
+					( urlMatch && urlMatch.indexOf( '.' ) === -1 ) ||  // At least one period ('.') must exist in the URL match for us to consider it an actual URL
+					( urlMatch && /^[A-Za-z]{3,9}:/.test( urlMatch ) && !/:.*?[A-Za-z]/.test( urlMatch ) ) ||  // At least one letter character must exist in the domain name after a protocol match. Ex: skip over something like "git:1.0"
+					( protocolRelativeMatch && /^[\w]\/\//.test( protocolRelativeMatch ) )  // a protocol-relative match which has a word character in front of it (so we can skip something like "abc//google.com")
 				) {
 					return matchStr;
 				}
@@ -379,9 +386,9 @@
 				var lastChar = matchStr.charAt( matchStr.length - 1 );
 				if( lastChar === ')' ) {
 					var openParensMatch = matchStr.match( /\(/g ),
-					    closeParensMatch = matchStr.match( /\)/g ),
-					    numOpenParens = ( openParensMatch && openParensMatch.length ) || 0,
-					    numCloseParens = ( closeParensMatch && closeParensMatch.length ) || 0;
+						closeParensMatch = matchStr.match( /\)/g ),
+						numOpenParens = ( openParensMatch && openParensMatch.length ) || 0,
+						numCloseParens = ( closeParensMatch && closeParensMatch.length ) || 0;
 
 					if( numOpenParens < numCloseParens ) {
 						matchStr = matchStr.substr( 0, matchStr.length - 1 );  // remove the trailing ")"
@@ -391,8 +398,8 @@
 
 
 				var anchorHref = matchStr,  // initialize both of these
-				    anchorText = matchStr,  // values as the full match
-				    linkType;
+					anchorText = matchStr,  // values as the full match
+					linkType;
 
 				// Process the urls that are found. We need to change URLs like "www.yahoo.com" to "http://www.yahoo.com" (or the browser
 				// will try to direct the user to "http://current-domain.com/www.yahoo.com"), and we need to prefix 'mailto:' to email addresses.
@@ -406,6 +413,11 @@
 					linkType = 'email';
 					anchorHref = 'mailto:' + emailAddress;
 					anchorText = emailAddress;
+				} else if (phoneMatch) {
+
+					linkType = 'phone';
+					anchorHref = 'tel:' + phoneMatch;
+					anchorText = phoneMatch;
 
 				} else {  // url match
 					linkType = 'url';
@@ -414,7 +426,7 @@
 						// Strip off any protocol-relative '//' from the anchor text (leaving the previous non-word character
 						// intact, if there is one)
 						var protocolRelRegex = new RegExp( "^" + me.protocolRelativeRegex.source ),  // for this one, we want to only match at the beginning of the string
-						    charBeforeMatch = protocolRelativeMatch.match( protocolRelRegex )[ 1 ] || "";
+							charBeforeMatch = protocolRelativeMatch.match( protocolRelRegex )[ 1 ] || "";
 
 						prefixStr = charBeforeMatch + prefixStr;  // re-add the character before the '//' to what will be placed before the <a> tag
 						anchorHref = anchorHref.replace( protocolRelRegex, "//" );  // remove the char before the match for the href
@@ -443,15 +455,15 @@
 		 * @return {String} The full HTML for the anchor tag.
 		 */
 		createAnchorTag : function( linkType, anchorHref, anchorText ) {
-            var me = this; //for closures
+			var me = this; //for closures
 			var attributesStr = this.createAnchorAttrsStr( linkType, anchorHref );
 			anchorText = this.processAnchorText( anchorText );
 
-            if(me.outputMarkdown){
-                return "!["+anchorText+"]("+anchorHref+")";
-            }else{
-    			return '<a ' + attributesStr + '>' + anchorText + '</a>';
-            }
+			if(me.outputMarkdown){
+				return "!["+anchorText+"]("+anchorHref+")";
+			}else{
+				return '<a ' + attributesStr + '>' + anchorText + '</a>';
+			}
 		},
 
 

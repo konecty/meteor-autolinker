@@ -1,6 +1,4 @@
 Package.describe({
-    name: "copleykj:autolinker",
-
     summary: "Autolinker.js packaged for Meteor with some slight additions and modifications",
 
     version: "1.0.0",
