@@ -14,3 +14,9 @@ Package.onUse(function(api) {
 
     api.export("Autolinker");
 });
+
+Package.onTest(function(api) {
+	api.use('tinytest');
+	api.use('konecty:autolinker');
+	api.addFiles('autolinker-test.js', ['client']);
+});
