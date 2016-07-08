@@ -1,7 +1,7 @@
 Package.describe({
     summary: "Autolinker.js packaged for Meteor. Forked from copleykj:meteor-autolinker.",
 
-    version: "1.0.3",
+    version: "1.0.4",
 
     git: "https://github.com/Konecty/meteor-autolinker.git"
 });
